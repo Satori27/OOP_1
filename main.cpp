@@ -1,10 +1,13 @@
-#include <iostream>
-
 #include "lib.h"
 
-using namespace std;
-
 int main() {
-    cout << "Bruh: " << endl
-         << A() << endl;
+  int number;
+  cin >> number;
+  pair<int, int> answer = closest_pair_tonum(number);
+  if (answer.first == 0) {
+	cout << "Very big number or not valuable input"
+		 << "\n";
+	return 0;
+  }
+  cout << answer.first << " " << answer.second << "\n";
 }
