@@ -2,10 +2,22 @@
 #include <gtest/gtest.h>
 using namespace std;
 
-TEST(ClosetPairTonum, BasicAssertions) {
+TEST(TestClosetPairTonumFirst, BasicAssertions) {
   // arrange
-  int number = 10;
-  pair<int, int> true_answer = {5, 4};
+  int number = 0;
+  pair<int, int> true_answer = {0, 0};
+
+  // act
+  pair<int, int> answer_of_func = closest_pair_tonum(number);
+
+  // assert
+  EXPECT_EQ(answer_of_func, true_answer);
+}
+
+TEST(TestClosetPairTonumSecond, BasicAssertions) {
+  // arrange
+  int number = 50;
+  pair<int, int> true_answer = {45, 36};
 
   // act
   pair<int, int> answer_of_func = closest_pair_tonum(number);
@@ -24,35 +36,23 @@ TEST(ClosetPairTonum, BasicAssertions) {
 
   // assert
   EXPECT_EQ(answer_of_func, true_answer);
+}
 
-
-
+TEST(TestClosetPairTonumThird, BasicAssertions) {
   // arrange
-  number = 50;
-  true_answer = {45, 36};
+  int number = 10;
+  pair<int, int> true_answer = {5, 4};
 
   // act
-  answer_of_func = closest_pair_tonum(number);
+  pair<int, int> answer_of_func = closest_pair_tonum(number);
 
   // assert
   EXPECT_EQ(answer_of_func, true_answer);
 
-
+  
 
   // arrange
   number = -50;
-  true_answer = {0, 0};
-
-  // act
-  answer_of_func = closest_pair_tonum(number);
-
-  // assert
-  EXPECT_EQ(answer_of_func, true_answer);
-
-
-
-  // arrange
-  number = 0;
   true_answer = {0, 0};
 
   // act
