@@ -1,8 +1,19 @@
 // Copyright 2023 SomeName
 #include "lib.h"
 
+void make_square_of_numbers(int number, unordered_set<int>& square_of_numbers){
+    int num_to_find_sq = number * 2;
 
-void loop_for_n(int number, int m, pair < int, int > & answer, unordered_set < int > & square_of_numbers) {
+    for (int sqrt_of_num = 1; sqrt_of_num <= sqrt(num_to_find_sq); ++sqrt_of_num) {
+        square_of_numbers.insert(sqrt_of_num * sqrt_of_num);
+    }
+}
+
+
+void second_loop(int number, int m, pair < int, int > & answer) {
+    unordered_set <int> square_of_numbers;
+    make_square_of_numbers(number, square_of_numbers);
+
     const auto sq_end = square_of_numbers.end();
 
     for (int num_to_find_n = 1; num_to_find_n < number - 1; ++num_to_find_n) {
@@ -25,16 +36,14 @@ pair < int, int > closest_pair_tonum(int number) {
         return answer = {0,0};
     }
 
-    unordered_set < int > square_of_numbers;
-    int num_to_find_sq = number * 2;
-    for (int sqrt_of_num = 1; sqrt_of_num <= sqrt(num_to_find_sq); ++sqrt_of_num) {
-        square_of_numbers.insert(sqrt_of_num * sqrt_of_num);
-    }
 
     for (int num_to_find_m = 1; num_to_find_m < number - 1; ++num_to_find_m) {
         int m = number - num_to_find_m;
-        if (m < answer.first) break;
-        loop_for_n(number, m, answer, square_of_numbers);
+
+        if (m < answer.first) {
+            break;
+        }
+        second_loop(number, m, answer);
     }
 
     return answer;
