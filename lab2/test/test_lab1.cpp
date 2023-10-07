@@ -166,7 +166,7 @@ TEST(Thirteen10, BasicAssertions) {
   EXPECT_EQ(real_answer, answer);
 }
 
-TEST(Thirteen10, BasicAssertions) {
+TEST(Thirteen11, BasicAssertions) {
   // arrange
   Thirteen first("A");
   Thirteen second("2");
@@ -175,7 +175,7 @@ TEST(Thirteen10, BasicAssertions) {
   unsigned char* arr = sum.get_array();
   size_t size = sum.get_size();
   string answer = convert_to_string(arr, size);;
-  string real_answer = "68";
+  string real_answer = "71";
 
 
   // assert

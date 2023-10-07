@@ -170,40 +170,15 @@ Thirteen Thirteen::operator / (const Thirteen & thirteen) {
 }
 
 Thirteen & Thirteen::operator += (const Thirteen & thirteen) {
-    int first_num = thirteen_to_int(_array, _size);
-    int second_num = thirteen_to_int(thirteen._array, thirteen._size);
-
-    int sum = first_num + second_num;
-    Thirteen result(convert_to_thirteen(sum));
-    _size = result._size;
-    _array = new unsigned char[_size];
-
-    for (size_t i {0}; i < _size; ++i) {
-        _array[i] = result._array[i];
-    }
-
-    return * this;
+    Thirteen new_thirteen = *this + thirteen;
+    *this = new_thirteen;
+    return *this;
 }
 
 Thirteen & Thirteen::operator -= (const Thirteen & thirteen) {
-    int first_num = thirteen_to_int(_array, _size);
-    int second_num = thirteen_to_int(thirteen._array, thirteen._size);
-
-    int diff = first_num - second_num;
-
-    if (diff < 0) {
-        throw std::logic_error("Can't be negative");
-    }
-
-    Thirteen result(convert_to_thirteen(diff));
-    _size = result._size;
-    _array = new unsigned char[_size];
-
-    for (size_t i {0}; i < _size; ++i) {
-        _array[i] = result._array[i];
-    }
-
-    return * this;
+    Thirteen new_thirteen = *this - thirteen;
+    *this = new_thirteen;
+    return *this;
 }
 
 Thirteen & Thirteen::operator = (const Thirteen & thirteen) {
