@@ -2,10 +2,8 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
-#include <vector1.hpp>
+#include <vector>
 #include <cmath>
-// #include "FigureValidator.h"
-// #include "IFigureValidator.h"
 
 using namespace std;
 
@@ -28,18 +26,3 @@ public:
     ~Figure() = default;
 
 };
-
-
-
-// inline std::ostream &operator<<(ostream &os, const Figure &P) {
-//   os << P.x1 << " "<<P.y1;
-//   return os;
-// }
-
-// inline std::istream &operator>>(istream &is, Figure &P) {
-//   int x1, y1;
-//   is >> x1 >> y1;
-//   P.x1 = x1;
-//   P.y1 = y1;
-//   return is;
-// }
