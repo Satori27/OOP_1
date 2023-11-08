@@ -35,5 +35,5 @@
 // Tests that the same type-parameterized test case can be
 // instantiated in different translation units linked together.
 // (ContainerTest is also instantiated in gtest-typed-test_test.cc.)
-INSTANTIATE_TYPED_TEST_SUITE_P(Vector, ContainerTest,
+INSTANTIATE_TYPED_TEST_SUITE_P(vector, ContainerTest,
                                testing::Types<std::vector<int> >);

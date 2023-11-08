@@ -62,7 +62,7 @@
 
 #if GTEST_INTERNAL_HAS_STD_SPAN
 #include <span>  // NOLINT
-#endif  // GTEST_INTERNAL_HAS_STD_SPAN
+#endif           // GTEST_INTERNAL_HAS_STD_SPAN
 
 // Some user-defined types for testing the universal value printer.
 
@@ -1177,7 +1177,7 @@ TEST(PrintStlContainerTest, Pair) {
   EXPECT_EQ("(true, 5)", Print(p));
 }
 
-TEST(PrintStlContainerTest, Vector) {
+TEST(PrintStlContainerTest, vector) {
   vector<int> v;
   v.push_back(1);
   v.push_back(2);

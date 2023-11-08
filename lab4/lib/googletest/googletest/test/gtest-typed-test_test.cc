@@ -60,7 +60,7 @@ class CommonTest : public Test {
  protected:
   // We used to use std::list here, but switched to std::vector since
   // MSVC's <list> doesn't compile cleanly with /W4.
-  typedef std::vector<T> Vector;
+  typedef std::vector<T> vector;
   typedef std::set<int> IntSet;
 
   CommonTest() : value_(1) {}
@@ -99,7 +99,7 @@ TYPED_TEST(CommonTest, ValuesAreCorrect) {
 
   // Typedefs in the fixture class template can be visited via the
   // "typename TestFixture::" prefix.
-  typename TestFixture::Vector empty;
+  typename TestFixture::vector empty;
   EXPECT_EQ(0U, empty.size());
 
   typename TestFixture::IntSet empty2;
