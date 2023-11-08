@@ -924,7 +924,7 @@ class VectorShuffleTest : public Test {
       found_in_vector[e] = true;
     }
 
-    // Vector size is correct, elements' range is correct, no
+    // vector size is correct, elements' range is correct, no
     // duplicate elements.  Therefore no corruption has occurred.
     return false;
   }
@@ -6691,7 +6691,7 @@ TEST(ColoredOutputTest, UsesColorsWhenTermSupportsColors) {
   SetEnv("TERM", "linux");            // TERM supports colors.
   EXPECT_TRUE(ShouldUseColor(true));  // Stdout is a TTY.
 
-  SetEnv("TERM", "cygwin");  // TERM supports colors.
+  SetEnv("TERM", "cygwin");           // TERM supports colors.
   EXPECT_TRUE(ShouldUseColor(true));  // Stdout is a TTY.
 #endif  // GTEST_OS_WINDOWS
 }
