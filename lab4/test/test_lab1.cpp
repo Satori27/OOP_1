@@ -32,18 +32,6 @@ TEST(Square2, BasicAssertions) {
   EXPECT_TRUE(res);
 }
 
-// TEST(Square3, BasicAssertions) {
-//   // arrange
-
-//   Square sq({1, 2}, {2, 1});
-//   Square sq1({1, 3}, {3, 1});
-//   // act
-//   sq1 = sq;
-//   bool res = sq1 == sq;
-
-//   // assert
-//   EXPECT_TRUE(res);
-// }
 
 TEST(Square4, BasicAssertions) {
   // arrange
@@ -123,18 +111,6 @@ TEST(Array2, BasicAssertions){
   EXPECT_EQ(ans, real_ans);
 }
 
-// TEST(Rectangle3, BasicAssertions) {
-//   // arrange
-
-//   Rectangle<double> req({0, 0}, {2, 4});
-//   Rectangle req1({0, 0}, {1, 5});
-//   // act
-//   req1 = req;
-//   bool res = req1 == req;
-
-//   // assert
-//   EXPECT_TRUE(res);
-// }
 
 TEST(Rectangle4, BasicAssertions) {
   // arrange
