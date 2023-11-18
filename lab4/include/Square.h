@@ -33,9 +33,9 @@ public:
   double area() const override;
 
 
-  friend std::ostream &operator<<(ostream &os, const Square<T> &P){
-    for (int i = 0; i < P._points.size(); ++i) {
-      os << P._points[i].x << " " << P._points[i].y;
+  friend std::ostream &operator<<(ostream &os, const Square<T> &p){
+    for (int i = 0; i < p._points.size(); ++i) {
+      os << p._points[i].x << " " << p._points[i].y;
       os << "\n";
     }
     return os;
@@ -45,17 +45,17 @@ public:
     os << *this;
   }
 
-  friend std::istream &operator>>(std::istream &is, Square &P) {
+  friend std::istream &operator>>(std::istream &is, Square &p) {
 	double x, y;
-  P._points.clear();
+  p._points.clear();
 	for (int i = 0; i < 2; ++i) {
 	  is >> x >> y;
-	  P._points.push_back({x, y});
+	  p._points.push_back({x, y});
 	}
-  Validate(P._points);
+  Validate(p._points);
 	return is;
   }
 };
 
 
-#include "/home/satori/oop/OOP_1/lab4/src/lab0/Square.hpp"
+#include "../src/lab0/Square.hpp"

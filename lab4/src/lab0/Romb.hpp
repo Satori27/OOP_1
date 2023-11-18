@@ -7,6 +7,7 @@ Romb<T>::Romb(vector<Point<T>> p) {
   _points = p; 
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Romb<T>::Romb(Point<T> x, Point<T> y, Point<T> x1, Point<T> y1) {
   _points.push_back(x);
@@ -15,6 +16,7 @@ Romb<T>::Romb(Point<T> x, Point<T> y, Point<T> x1, Point<T> y1) {
   _points.push_back(y1);
   Validate(_points);
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 double Romb<T>::area() const {
@@ -26,6 +28,7 @@ double Romb<T>::area() const {
   return area;
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Point<T> Romb<T>::center() const {
   double x_center =
@@ -35,8 +38,10 @@ Point<T> Romb<T>::center() const {
   return {x_center, y_center};
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Romb<T>::operator double() const { return this->area(); }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Romb<T> &Romb<T>::operator=(Romb &romb) {
@@ -46,6 +51,7 @@ Romb<T> &Romb<T>::operator=(Romb &romb) {
   }
   return *this;
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 bool Romb<T>::operator==(Romb &romb) const {

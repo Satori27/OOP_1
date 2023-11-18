@@ -5,12 +5,14 @@ Square<T>::Square(vector<Point<T>> p) {
     _points = p; 
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 double Square<T>::area() const{
   double x = _points[0].x - _points[1].x;
   double sq = x * x;
   return sq;
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Square<T>::Square(Point<T> p1, Point<T> p2) {
@@ -31,8 +33,10 @@ Point<T> Square<T>::center() const {
   return {x_center, y_center};
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Square<T>::operator double() const { return this->area(); }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Square<T> &Square<T>::operator=(Square &sq) {
@@ -42,6 +46,7 @@ Square<T> &Square<T>::operator=(Square &sq) {
   }
   return *this;
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 bool Square<T>::operator==(Square &sq) const {

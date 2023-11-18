@@ -8,31 +8,34 @@ requires std::is_arithmetic_v<T>
 class Romb : public Figure<T> {
 protected:
   vector<Point<T>> _points;
+
   static double distance(Point<T> p1, Point<T> p2) {
-	double x = p1.x - p2.x;
-	double y = p1.y - p2.y;
-	double dist = sqrt(x * x + y * y);
-	return dist;
+    double x = p1.x - p2.x;
+    double y = p1.y - p2.y;
+    double dist = sqrt(x * x + y * y);
+    return dist;
   };
+
   void Validate(vector<Point<T>> points) {
-    double ab = distance(points[0], points[1]);
-    double bc = distance(points[1], points[2]);
-    double cd = distance(points[2], points[3]);
-    double da = distance(points[3], points[0]);
+      double ab = distance(points[0], points[1]);
+      double bc = distance(points[1], points[2]);
+      double cd = distance(points[2], points[3]);
+      double da = distance(points[3], points[0]);
 
-    bool equal_side = (ab == bc) && (bc == cd) && (cd == da);
-    if (!equal_side) {
-      throw invalid_argument("Sides must be equals");
-	}
+      bool equal_side = (ab == bc) && (bc == cd) && (cd == da);
+      if (!equal_side) {
+        throw invalid_argument("Sides must be equals");
+    }
 
-	Point ab_vector{points[0].x - points[2].x, points[0].y - points[2].y};
-	Point cd_vector{points[1].x - points[3].x, points[1].y - points[3].y};
-	double scalar = ab_vector.x * cd_vector.x + ab_vector.y * cd_vector.y;
-	if (scalar != 0) {
-	  cout << scalar << "\n";
-	  throw invalid_argument("Diagonals must be perpendicular");
-	}
+    Point ab_vector{points[0].x - points[2].x, points[0].y - points[2].y};
+    Point cd_vector{points[1].x - points[3].x, points[1].y - points[3].y};
+    double scalar = ab_vector.x * cd_vector.x + ab_vector.y * cd_vector.y;
+    if (scalar != 0) {
+      cout << scalar << "\n";
+      throw invalid_argument("Diagonals must be perpendicular");
+    }
   }
+
 
 public:
   explicit Romb(vector<Point<T>> p);
@@ -45,9 +48,9 @@ public:
   Point<T> center() const override;
   double area() const override;
 
-  friend std::ostream &operator<<(ostream &os, const Romb &P) {
-	for (int i = 0; i < P._points.size(); ++i) {
-	  os << P._points[i].x << " " << P._points[i].y;
+  friend std::ostream &operator<<(ostream &os, const Romb &p) {
+	for (int i = 0; i < p._points.size(); ++i) {
+	  os << p._points[i].x << " " << p._points[i].y;
 	  os << "\n";
 	}
 	return os;
@@ -56,15 +59,15 @@ public:
     os << *this;
   }
 
-  friend std::istream &operator>>(std::istream &is, Romb &P) {
+  friend std::istream &operator>>(std::istream &is, Romb &p) {
 	double x, y;
-	P._points.clear();
+	p._points.clear();
 	for (int i = 0; i < 4; ++i) {
 	  is >> x >> y;
-	  P._points.push_back({x, y});
+	  p._points.push_back({x, y});
 	}
 	return is;
   }
 };
 
-#include "/home/satori/oop/OOP_1/lab4/src/lab0/Romb.hpp"
+#include "../src/lab0/Romb.hpp"

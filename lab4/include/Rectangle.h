@@ -36,27 +36,28 @@ public:
   Point<T> center() const override;
   double area() const override;
 
-  friend std::ostream &operator<<(ostream &os, const Rectangle &P) {
-	for (int i = 0; i < P._points.size(); ++i) {
-	  os << P._points[i].x << " " << P._points[i].y;
-	  os << "\n";
-	}
-	return os;
-  }
-  void print(std::ostream & os) override {
-    os << *this;
+
+  friend std::ostream &operator<<(ostream &os, const Rectangle &p) {
+    for (int i = 0; i < p._points.size(); ++i) {
+      os << p._points[i].x << " " << p._points[i].y;
+      os << "\n";
+    }
+    return os;
+    }
+    void print(std::ostream & os) override {
+      os << *this;
   }
 
-  friend std::istream &operator>>(std::istream &is, Rectangle &P) {
-	double x, y;
-  P._points.clear();
-	for (int i = 0; i < 2; ++i) {
-	  is >> x >> y;
-	  P._points.push_back({x, y});
-	}
-	return is;
+  friend std::istream &operator>>(std::istream &is, Rectangle &p) {
+    double x, y;
+    p._points.clear();
+    for (int i = 0; i < 2; ++i) {
+      is >> x >> y;
+      p._points.push_back({x, y});
+    }
+    return is;
   }
 
 };
 
-#include "/home/satori/oop/OOP_1/lab4/src/lab0/Rectangle.hpp"
+#include "../src/lab0/Rectangle.hpp"

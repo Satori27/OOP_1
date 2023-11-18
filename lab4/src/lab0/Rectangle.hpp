@@ -1,10 +1,12 @@
 #include "Rectangle.h"
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Rectangle<T>::Rectangle(vector<Point<T>> p) { 
   Validate(p);
 _points = p; 
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Rectangle<T>::Rectangle(Point<T> p1, Point<T> p2) {
@@ -16,12 +18,14 @@ Rectangle<T>::Rectangle(Point<T> p1, Point<T> p2) {
   _points.push_back(p2);
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 double Rectangle<T>::area() const {
   double x = _points[0].x - _points[1].x;
   double y = _points[0].y - _points[1].y;
   return abs(x * y);
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Point<T> Rectangle<T>::center() const {
@@ -30,8 +34,10 @@ Point<T> Rectangle<T>::center() const {
   return {x_center, y_center};
 }
 
+
 template <class T> requires std::is_arithmetic_v<T>
 Rectangle<T>::operator double() const { return this->area(); }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 Rectangle<T> &Rectangle<T>::operator=(Rectangle &req) {
@@ -41,6 +47,7 @@ Rectangle<T> &Rectangle<T>::operator=(Rectangle &req) {
   }
   return *this;
 }
+
 
 template <class T> requires std::is_arithmetic_v<T>
 bool Rectangle<T>::operator==(Rectangle &req) const {
