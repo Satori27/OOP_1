@@ -6,7 +6,6 @@
 #include <cmath>
 #include <assert.h>
 #include <concepts>
-#include <atomic>
 #include <memory>
 #include <cstddef>
 #include <type_traits>
@@ -77,7 +76,7 @@ public:
         }
         for(size_t i=0;i<_size;++i){
             double sq = _array[i]->area();
-            cout<< sq<<endl;
+            cout<< sq<< endl;
         }
     }
 
