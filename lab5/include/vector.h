@@ -24,7 +24,8 @@ public:
         size_ = copy_vec.size_;
 
     }
-
+    MyVector<int>::iterator a;
+    using iterator = T;
     MyVector()
         :data_(nullptr), size_(0), capacity_(0) {
     }
