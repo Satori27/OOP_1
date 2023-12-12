@@ -70,7 +70,7 @@ template < class T, size_t N >
     void deallocate(T * pointer, size_t) {
       #ifdef DEBUG
         std::cout << "allocator: Deallocate block " << pointer << std::endl;
-      #endif
+      #endif 
       auto it2 = std::next(_free_blocks.begin(), _free_count);
       ++_free_count;
       * it2 = pointer;
