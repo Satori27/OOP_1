@@ -156,10 +156,12 @@ int main() {
 	  for (int j = 0; j < grid; ++j) {
 		for (int i = 0; i < grid; ++i) {
 		  char c = fields[i + j * grid];
-		  if (c != 0)
-			std::cout << "[" << c << "]";
+		  if (c=='.')
+		  	std::cout<<"\u2715 ";
+		  else if(c!=0)
+			std::cout << c <<" ";
 		  else
-			std::cout << "[ ]";
+			std::cout << "\u00B7 ";
 		}
 		std::cout << std::endl;
 	  }

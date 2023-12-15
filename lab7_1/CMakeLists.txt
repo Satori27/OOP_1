@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # add_compile_options(-g)
+add_compile_options(-fstack-protector)
 
 add_subdirectory(lib/googletest)
 
